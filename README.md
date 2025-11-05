@@ -1,18 +1,18 @@
 # 2025.10.16_TA-25_Siim_python
 
 # Table of Contents
-1. yl nr 7 - modulo tehted kuupäevadega
-2. 2.1 Imperatiivne vs Deklaratiivne — Andmefail energy.xml
-3. 2.2 [](Imperatiivne vs Deklaratiivne — Pyhton)
-4. 2.3 [](Imperatiivne vs Deklaratiivne — R näitel)
-5. 2.4 [2.3 Imperatiivne vs Deklaratiivne](# Imperatiivne vs Deklaratiivne — SQL näitel)
-6. [Example2](##Andmed - energy tabel)
-7. [Third Example](# Imperatiivne lähenemine - Python + SQL-ühendus)
-8. [Fourth Example](# Deklaratiivne lähenemine - puhas SQL)
+1. [1. yl nr 7 - modulo tehted kuupäevadega](#1-yl-nr-7---modulo-tehted-kuup%C3%A4evadega)
+2. [2.1 Imperatiivne vs Deklaratiivne — Andmefail energy.xml](#21-imperatiivne-vs-deklaratiivne--andmefail-xml)
+3. [2.2 Imperatiivne vs Deklaratiivne — Pyhton](#22-imperatiivne-lahendus---python)
+4. [2.3 Imperatiivne vs Deklaratiivne — R näitel](#23-imperatiivne-vs-deklaratiivne--r-näitel)
+5. [2.4 Imperatiivne vs Deklaratiivne — SQL näitel](#24-imperatiivne-vs-deklaratiivne--sql-näitel)
+6. [3-input-küsimine](#3-input-küsimine)
+7. [4-stringi-meetod](#4-stringi-meetod)
+8. [5-tsükli-näide](#5-tsükli-näide)
 9. [Viies Example]( Deklaratiivne lähenemine - Kombineeritud lähenemine Pythonis)
-10. [Kolmas Example](#3-input-küsimine)
-11. [](#4-stringi-meetod)
-12. (#5-tsükli-näide)
+10. 
+11. 
+12. 
 
 # 1. yl nr 7 - modulo tehted kuupäevadega
 
