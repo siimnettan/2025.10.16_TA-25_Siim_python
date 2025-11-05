@@ -1,10 +1,10 @@
 # 2025.10.16_TA-25_Siim_python
 
 # Table of Contents
-2.1 Imperatiivne vs Deklaratiivne — Andmefail energy.xml
-2.2 [](Imperatiivne vs Deklaratiivne — Pyhton)
-2.3 [](Imperatiivne vs Deklaratiivne — R näitel)
-2.4 [2.3 Imperatiivne vs Deklaratiivne](# Imperatiivne vs Deklaratiivne — SQL näitel)
+2. 2.1 Imperatiivne vs Deklaratiivne — Andmefail energy.xml
+2. 2.2 [](Imperatiivne vs Deklaratiivne — Pyhton)
+2. 2.3 [](Imperatiivne vs Deklaratiivne — R näitel)
+2. 2.4 [2.3 Imperatiivne vs Deklaratiivne](# Imperatiivne vs Deklaratiivne — SQL näitel)
 2. [Example2](##Andmed - energy tabel)
 3. [Third Example](# Imperatiivne lähenemine - Python + SQL-ühendus)
 4. [Fourth Example](# Deklaratiivne lähenemine - puhas SQL)
