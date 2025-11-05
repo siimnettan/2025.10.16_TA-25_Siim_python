@@ -10,6 +10,9 @@
 7. [Third Example](# Imperatiivne lähenemine - Python + SQL-ühendus)
 8. [Fourth Example](# Deklaratiivne lähenemine - puhas SQL)
 9. [Viies Example]( Deklaratiivne lähenemine - Kombineeritud lähenemine Pythonis)
+10. [Kolmas Example](#3-input-küsimine)
+11. [](#4-stringi-meetod)
+12. (#5-tsükli-näide)
 
 # 1. yl nr 7 - modulo tehted kuupäevadega
 
