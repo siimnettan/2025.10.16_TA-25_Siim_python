@@ -34,40 +34,6 @@ Külje pikkused ei pea olema täisarvud. (ujukomaarv - float)
 
 
 
-#-----------------------------------------------------
-# --- OPI ---
-#-----------------------------------------------------
-
-# """ https://www.w3schools.com/python/ref_string_isnumeric.asp  """
-# a = "\u0030" #unicode for 0
-# b = "\u00B2" #unicode for &sup2;
-# c = "10km2"
-# d = "-1"
-# e = "1.5"
-# f = "1"
-# ff = "1,1"
-
-# print(a.isnumeric())
-# print(b.isnumeric())
-# print(c.isnumeric())
-# print(d.isnumeric())
-# print(e.isnumeric())
-# print(f.isnumeric())
-# print(ff.isnumeric())
-
-# """ https://stackoverflow.com/questions/36452105/python-user-input-data-type """
-
-# answer = input("Enter an integer: ")
-# while not answer.isdigit():
-## while not answer.isdecimal(): # huvitav mis vahe on isdigit ja isdecimal 
-#     print("That's not a whole number. Try again.")
-#     answer = input("Enter an integer: ")
-# answer = int(answer)
-
-
-txt = "For only {price:.2f} dollars!"
-print(txt.format(price = 49))
-
 
 
 #-----------------------------------------------------

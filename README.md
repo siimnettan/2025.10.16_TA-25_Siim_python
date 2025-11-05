@@ -1,14 +1,92 @@
 # 2025.10.16_TA-25_Siim_python
 
 # Table of Contents
+1. yl nr 7 - modulo tehted kuupäevadega
 2. 2.1 Imperatiivne vs Deklaratiivne — Andmefail energy.xml
-2. 2.2 [](Imperatiivne vs Deklaratiivne — Pyhton)
-2. 2.3 [](Imperatiivne vs Deklaratiivne — R näitel)
-2. 2.4 [2.3 Imperatiivne vs Deklaratiivne](# Imperatiivne vs Deklaratiivne — SQL näitel)
-2. [Example2](##Andmed - energy tabel)
-3. [Third Example](# Imperatiivne lähenemine - Python + SQL-ühendus)
-4. [Fourth Example](# Deklaratiivne lähenemine - puhas SQL)
-5. [Viies Example]( Deklaratiivne lähenemine - Kombineeritud lähenemine Pythonis)
+3. 2.2 [](Imperatiivne vs Deklaratiivne — Pyhton)
+4. 2.3 [](Imperatiivne vs Deklaratiivne — R näitel)
+5. 2.4 [2.3 Imperatiivne vs Deklaratiivne](# Imperatiivne vs Deklaratiivne — SQL näitel)
+6. [Example2](##Andmed - energy tabel)
+7. [Third Example](# Imperatiivne lähenemine - Python + SQL-ühendus)
+8. [Fourth Example](# Deklaratiivne lähenemine - puhas SQL)
+9. [Viies Example]( Deklaratiivne lähenemine - Kombineeritud lähenemine Pythonis)
+
+# 1. yl nr 7 - modulo tehted kuupäevadega
+
+Kirjuta programm, mis ütleb, kas kasutaja poolt etteantud täisarv on paarisarv või mitte. 
+(paarisarvu mõiste - odd/even)
+
+```Python
+## TRIKID:
+# ctrl + ä
+# shift alt a
+# alt shift nool_üles
+
+n = int(input( "kasutaja 1 sisesta nr : " ))
+
+
+if n % 2:
+        print("kasutaja 1 sisestatud arv (", n, ") on paaritu")
+else:
+        print("paaris arv")
+
+
+#-----------------------------------------------------
+# --- OPI ---
+#-----------------------------------------------------
+# ### modulo operaatorit % saab kasutada kellaaegade ümberarvutustes:
+
+# # 1. 24-tunnise kellaaja normaliseerimine
+# Kui sul on tundide arv, mis ületab 24 (näiteks 27 tundi), siis modulo abil saad selle tagasi tavapärasesse 24-tunnisesse formaati:
+
+# tunnid = 27
+# kellaaeg = tunnid % 24  # Tulemus: 3
+
+# Selgitus: 27 tundi tähendab 1 ööpäev + 3 tundi → kellaaeg on 03:00.
+
+# #2. Kellaaeg pärast kindlat ajavahemikku
+# Kui soovid teada, mis kell on näiteks 50 tunni pärast, ja praegune kellaaeg on 10:00:
+
+# praegune_kell = 10
+# hiljem = (praegune_kell + 50) % 24  # Tulemus: 12
+
+# Selgitus: 10 + 50 = 60 → 60 % 24 = 12 → kell on 12:00.
+
+# #3. Minutite ümberarvutus tundideks ja minutiteks
+# Kui sul on näiteks 130 minutit ja tahad selle jagada tundideks ja minutiteks:
+
+# minutid = 130
+# tunnid = minutid // 60         # Tulemus: 2
+# alles_jäänud_minutid = minutid % 60  # Tulemus: 10
+
+# Selgitus: 130 minutit = 2 tundi ja 10 minutit.
+
+
+# ### Modulo operaatorit saab väga hästi kasutada nädalapäevade arvutamisel, kuna nädalas on 7 päeva ja % 7 aitab tsükliliselt liikuda läbi nädalapäevade.
+# Näide: Mis päev on X päeva pärast?
+# Oletame, et täna on teisipäev (päev nr 2, kui loeme:
+# 0 = pühapäev,
+# 1 = esmaspäev,
+# 2 = teisipäev,
+# ...
+# 6 = laupäev).
+# Kui tahame teada, mis päev on 10 päeva pärast, siis:
+# Pythontänane_päev = 2  # teisipäevpäeva_nr = (tänane_päev + 10) % 7  # Tulemus: 5Show more lines
+# Tulemus: päev nr 5 = reede
+
+# Teine näide: Mis päev oli X päeva tagasi?
+# Kui tahame teada, mis päev oli 9 päeva tagasi, ja täna on neljapäev (päev nr 4):
+# Pythontänane_päev = 4  # neljapäevpäeva_nr = (tänane_päev - 9) % 7  # Tulemus: 2Show more lines
+# Tulemus: päev nr 2 = teisipäev
+# NB! Kui tulemus on negatiivne, siis % operaator tagastab positiivse jäägi (sõltuvalt keelest – Pythonis see töötab hästi).
+
+# Kolmas näide: Päevade loend tsüklis
+# Kui sul on loend päevadest ja tahad liikuda edasi tsükliliselt:
+# Pythonpäevad = ["P", "E", "T", "K", "N", "R", "L"]algus = 6  # Laupäevfor i in range(10):    print(päevad[(algus + i) % 7])Show more lines
+# Tulemus: Laupäev, Pühapäev, Esmaspäev, ..., Tsükliliselt edasi.
+
+```
+
 
 # 2.1 Imperatiivne vs Deklaratiivne — Andmefail XML
 
@@ -321,3 +399,116 @@ conn.close()
 
 - Imperatiivne → “Tee need sammud, et CSV saada.”
 - Deklaratiivne (SQL) → “Siin on, mida ma tahan, sina (andmebaas) otsi viis, kuidas seda kõige paremini teha.”
+
+
+# 3. Input küsimine 
+
+```Python
+#-----------------------------------------------------
+# --- OPI ---
+#-----------------------------------------------------
+
+# """ https://www.w3schools.com/python/ref_string_isnumeric.asp  """
+# a = "\u0030" #unicode for 0
+# b = "\u00B2" #unicode for &sup2;
+# c = "10km2"
+# d = "-1"
+# e = "1.5"
+# f = "1"
+# ff = "1,1"
+
+# print(a.isnumeric())
+# print(b.isnumeric())
+# print(c.isnumeric())
+# print(d.isnumeric())
+# print(e.isnumeric())
+# print(f.isnumeric())
+# print(ff.isnumeric())
+
+# """ https://stackoverflow.com/questions/36452105/python-user-input-data-type """
+
+answer = input("Enter an integer: ")
+while not answer.isdigit():
+# while not answer.isdecimal(): # huvitav mis vahe on isdigit ja isdecimal 
+    print("That's not a whole number. Try again.")
+    answer = input("Enter an integer: ")
+answer = int(answer)
+
+
+
+
+```
+
+# 4. Stringi meetod
+
+```Python
+txt = "For only {price:.2f} dollars!"
+print(txt.format(price = 49))
+```
+
+See, mida sa näitasid, on **kaks erinevat viisi stringide vormindamiseks** Pythonis. Mõlemad kuuluvad **imperatiivse programmeerimise** stiili alla, mitte otseselt objektorienteeritud programmeerimise (OOP) alla, kuigi Python ise toetab OOP-d.
+
+---
+
+### 🧩 1. **Lihtne komadega ühendamine (`print` koos `,`)**
+```python
+price = 49
+print("For only", price, "dollars!")
+```
+- See on **lihtne ja otsekohene** viis stringide ja muutujate ühendamiseks.
+- Ei kasuta vormindust, seega ei saa kontrollida nt komakohtade arvu.
+- Ei ole objektorienteeritud – lihtsalt käsurea väljund.
+
+---
+
+### 🧩 2. **`str.format()` meetod**
+```python
+txt = "For only {price:.2f} dollars!"
+print(txt.format(price = 49))
+```
+- Kasutab **stringi meetodit**, mis on **objektipõhine** (sest `txt` on `str` objekt ja `.format()` on selle meetod).
+- Võimaldab **täpsemat kontrolli**, nt komakohtade arv (`.2f` tähendab 2 kohta pärast koma).
+- Seda võib pidada **objektorienteeritud lähenemiseks**, kuna kasutad objekti (`str`) meetodit.
+
+---
+
+### Kokkuvõte:
+
+| Meetod | Vormindus | OOP-seos |
+|--------|-----------|----------|
+| `print("...", var, "...")` | Vähe kontrolli | Ei ole OOP |
+| `"tekst {var}".format(var=...)` | Täpne kontroll | OOP-meetod |
+
+---
+
+Kui soovid, võin näidata ka kolmandat, uuemat viisi: **f-stringid**, mis on veelgi mugavamad:
+
+```python
+price = 49
+print(f"For only {price:.2f} dollars!")
+```
+
+
+
+
+# 5. tsükli näide
+
+```Python
+numbers = [1, 2, 3, 4, 5]
+squared = []
+
+for n in numbers:
+    squared.append(n * n)
+
+print(squared)
+```
+
+
+
+# Vahe enne lõppu
+
+
+# LOPP
+
+
+
