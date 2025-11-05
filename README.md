@@ -1,5 +1,12 @@
 # 2025.10.16_TA-25_Siim_python
 
+# Table of Contents
+1. [Example](# Imperatiivne vs Deklaratiivne — SQL näitel)
+2. [Example2](## Andmed - energy tabel)
+3. [Third Example](# Imperatiivne lähenemine - Python + SQL-ühendus)
+4. [Fourth Example](# Deklaratiivne lähenemine - puhas SQL)
+5. [Viies Example](## Võrdlus)
+
 # Imperatiivne vs Deklaratiivne — SQL näitel
 
 Võtame sama andmenäite, kuid seekord kujutame ette, et andmed on salvestatud andmebaasi tabelisse.  
@@ -15,7 +22,7 @@ Võtame sama andmenäite, kuid seekord kujutame ette, et andmed on salvestatud a
 
 ---
 
-## 🧱 1️⃣ Imperatiivne lähenemine (Python + SQL-ühendus)
+# 🧱 1️⃣ Imperatiivne lähenemine (Python + SQL-ühendus)
 
 Imperatiivses stiilis sa **kirjutad käsud**, kuidas tulemus saada:
 - ühenda andmebaasiga,  
@@ -44,7 +51,7 @@ conn.close()
 
 ```
 
-## 🧩 2️⃣ Deklaratiivne lähenemine (puhas SQL)
+# 🧩 2️⃣ Deklaratiivne lähenemine (puhas SQL)
 
 SQL ise on deklaratiivne:
 
