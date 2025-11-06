@@ -16,21 +16,22 @@ Külje pikkused ei pea olema täisarvud. (ujukomaarv - float)
 # --- 
 #-----------------------------------------------------
 
-# kylg_a = float(input( "sisesta külg a : " ))
 
-# kylg_b = float(input( "sisesta külg b : " ))
+kylg_a = float(input( "sisesta külg a : " ))
 
-# kylg_c = float(input( "sisesta külg c : " ))
+kylg_b = float(input( "sisesta külg b : " ))
+
+kylg_c = float(input( "sisesta külg c : " ))
 
 
-# if kylg_c < 0 or kylg_b  < 0 or kylg_a  < 0:
-#         print("kasutaja on sisestanud kolmnurga negatiivse külje pikkuse (külgedega: ", kylg_a, ", ",  kylg_b, " & ", kylg_c, ") ")
-# elif kylg_c > kylg_a and kylg_c > kylg_b and kylg_a == kylg_b:
-#         print("kasutaja on sisestanud võrdhaarse kolmnurga (külgedega: ", kylg_a, ", ",  kylg_b, " & ", kylg_c, ") ")
-# elif kylg_c == kylg_a and kylg_c == kylg_b and kylg_a == kylg_b:
-#         print("kasutaja on sisestanud võrdkülgse kolmnurga (külgedega: ", kylg_a, ", ",  kylg_b, " & ", kylg_c, ") ")
-# else :
-#         print("kasutaja on sisestanud kolmnurga (külgedega: ", kylg_a, ", ",  kylg_b, " & ", kylg_c, ") ")
+if kylg_c < 0 or kylg_b  < 0 or kylg_a  < 0:
+        print("kasutaja on sisestanud kolmnurga negatiivse külje pikkuse (külgedega: ", kylg_a, ", ",  kylg_b, " & ", kylg_c, ") ")
+elif kylg_c > kylg_a and kylg_c > kylg_b and kylg_a == kylg_b:
+        print("kasutaja on sisestanud võrdhaarse kolmnurga (külgedega: ", kylg_a, ", ",  kylg_b, " & ", kylg_c, ") ")
+elif kylg_c == kylg_a and kylg_c == kylg_b and kylg_a == kylg_b:
+        print("kasutaja on sisestanud võrdkülgse kolmnurga (külgedega: ", kylg_a, ", ",  kylg_b, " & ", kylg_c, ") ")
+else :
+        print("kasutaja on sisestanud kolmnurga (külgedega: ", kylg_a, ", ",  kylg_b, " & ", kylg_c, ") ")
 
 
 

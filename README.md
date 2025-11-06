@@ -6,6 +6,10 @@
 3. [2.2 Imperatiivne vs Deklaratiivne — Pyhton](#22-imperatiivne-lahendus---python)
 4. [2.3 Imperatiivne vs Deklaratiivne — R näitel](#23-imperatiivne-vs-deklaratiivne--r-näitel)
 5. [2.4 Imperatiivne vs Deklaratiivne — SQL näitel](#24-imperatiivne-vs-deklaratiivne--sql-näitel)
+  1. [Andmed](#andmed)
+  2. [Imperat - Python & SQL](#imperat---python-&-sql)
+  3. [Dekl - SQL](#dekl---sql)
+  4. [Dekl - Python & SQL](#dekl---python-&-sql)
 6. [3-input-küsimine](#3-input-küsimine)
 7. [4-stringi-meetod](#4-stringi-meetod)
 8. [5-tsükli-näide](#5-tsükli-näide)
@@ -301,8 +305,12 @@ kolmas variant, kus deklaratiivne R-kood teeb sama töö üheainsa funktsiooniku
 Võtame sama andmenäite, kuid seekord kujutame ette, et andmed on salvestatud andmebaasi tabelisse.  
 
 ---
+ 1. [Sub paragraph](#subparagraph1)
 
-## 2.4.1 🧩 Imperatiivne lähenemine - Andmed (`energy` tabel)
+ ### Sub paragraph <a name="subparagraph1"></a>
+This is a sub paragraph, formatted in heading 3 style
+
+## 2.4.1 🧩 Imperatiivne lähenemine - Andmed (`energy` tabel)  <a name="Andmed"></a>
 
 | DateOfIssue | ProductionTechnology | EnergySource |
 |--------------|----------------------|---------------|
@@ -311,7 +319,7 @@ Võtame sama andmenäite, kuid seekord kujutame ette, et andmed on salvestatud a
 
 ---
 
-## 2.4.2 🧱 1️⃣ Imperatiivne lähenemine (Python + SQL-ühendus)
+## 2.4.2 🧱 1️⃣ Imperatiivne lähenemine (Python + SQL-ühendus) <a name="Imperat - Python & SQL"></a>
 
 Imperatiivses stiilis sa **kirjutad käsud**, kuidas tulemus saada:
 - ühenda andmebaasiga,  
@@ -340,7 +348,7 @@ conn.close()
 
 ```
 
-## 2.4.3 🧩 2️⃣ Deklaratiivne lähenemine (puhas SQL)
+## 2.4.3 🧩 2️⃣ Deklaratiivne lähenemine (puhas SQL) <a name="Dekl - SQL"></a>
 
 SQL ise on deklaratiivne:
 
@@ -361,7 +369,7 @@ ORDER BY DateOfIssue;
 - ütled vaid, mida soovid näha;
 - andmebaasi mootor otsustab ise, kuidas päring optimaalselt täita.
 
-### 2.4.3 Deklaratiivne lähenemine - (Lisavariant) Kombineeritud lähenemine Pythonis
+## 2.4.3 Deklaratiivne lähenemine - (Lisavariant) Kombineeritud lähenemine Pythonis <a name="Dekl - Python & SQL"></a>
 
 Deklaratiivset SQL-i saab kasutada ka Pythonis nii, et Python ei kontrolli protsessi, vaid lihtsalt “vahendab” tulemust:
 
