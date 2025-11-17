@@ -6,14 +6,10 @@
 3. [2.2 Imperatiivne vs Deklaratiivne — Pyhton](#22-imperatiivne-lahendus---python)
 4. [2.3 Imperatiivne vs Deklaratiivne — R näitel](#23-imperatiivne-vs-deklaratiivne--r-näitel)
 5. [2.4 Imperatiivne vs Deklaratiivne — SQL näitel](#24-imperatiivne-vs-deklaratiivne--sql-näitel)
-  1. [Andmed](#andmed)
-  2. [Imperat - Python & SQL](#imperat---python-&-sql)
-  3. [Dekl - SQL](#dekl---sql)
-  4. [Dekl - Python & SQL](#dekl---python-&-sql)
 6. [3-input-küsimine](#3-input-küsimine)
 7. [4-stringi-meetod](#4-stringi-meetod)
 8. [5-tsükli-näide](#5-tsükli-näide)
-9. [Viies Example]( Deklaratiivne lähenemine - Kombineeritud lähenemine Pythonis)
+9. [6. Sokoban Mängu ehitamine](#6-sokoban-mangu-ehitamine)
 10. 
 11. 
 12. 
@@ -514,6 +510,172 @@ for n in numbers:
 print(squared)
 ```
 
+
+
+# 6. Sokoban mangu ehitamine
+
+
+Siin on **täielik õppetunni plaan**, mis sobib põhikooli tasemele ja õpetab samm-sammult Sokoban-mängu loomist Pythonis:
+
+***
+
+## **Õppetunni pealkiri:**
+
+**"Ehita oma Sokoban-mäng Pythonis"**
+
+### **Eesmärgid:**
+
+*   Õpilane mõistab, mis on Sokoban ja kuidas mäng töötab.
+*   Õpilane õpib:
+    *   kasutama **list of lists** struktuuri mänguvälja jaoks,
+    *   kirjutama funktsioone (`print_grid`, `move`, `is_win`),
+    *   töötama **tingimuslausete** ja **koordinaatidega**,
+    *   looma lihtsat mänguloogikat.
+
+***
+
+## **Tunni kestus:**
+
+2 × 45 minutit (võib jagada ka 3 osaks).
+
+***
+
+## **Tunni struktuur:**
+
+### **1. Sissejuhatus (10 min)**
+
+*   Näita valmis Sokoban-mängu terminalis.
+*   Selgita reegleid:
+    *   Mängija (`Y`) liigub WASD-ga.
+    *   Kastid (`B`) tuleb lükata eesmärkidele (`F`).
+    *   Seinad (`#`) ei lase liikuda.
+*   Küsi: *Mis juhtub, kui kast on seina ees?* (ei saa lükata).
+
+***
+
+### **2. Planeerimine (10 min)**
+
+*   Joonista paberile mänguväli (grid).
+*   Selgita, et Pythonis teeme selle **list of lists** kujul.
+*   Sümbolid: `#`, `.`, `F`, `B`, `Y`.
+
+***
+
+### **3. Samm-sammuline ehitamine**
+
+#### **Samm 1: Mänguvälja printimine (15 min)**
+
+*   Näita koodi:
+    ```python
+    grid = [
+        list("#######"),
+        list("#F.####"),
+        list("#FB...#"),
+        list("#YB.B.#"),
+        list("###F..#"),
+        list("#######")
+    ]
+
+    def print_grid():
+        for row in grid:
+            print(" ".join(row))
+        print()
+
+    print_grid()
+    ```
+*   Harjutus: Muuda sümboleid ja prindi uuesti.
+
+***
+
+#### **Samm 2: Leia mängija ja eesmärgid (10 min)**
+
+*   Näita, kuidas leida `Y` ja `F`:
+    ```python
+    player_pos = (3, 1)
+    goals = [(i, j) for i in range(len(grid)) for j in range(len(grid[0])) if grid[i][j] == "F"]
+    print(goals)
+    ```
+*   Selgita, mis on **koordinaadid**.
+
+***
+
+#### **Samm 3: Liikumine ilma kastideta (15 min)**
+
+*   Lisa WASD sisend ja liikumine:
+    ```python
+    def move(dx, dy):
+        global player_pos
+        x, y = player_pos
+        nx, ny = x + dx, y + dy
+        if grid[nx][ny] in [".", "F"]:
+            grid[nx][ny] = "Y"
+            grid[x][y] = "." if (x, y) not in goals else "F"
+            player_pos = (nx, ny)
+    ```
+*   Harjutus: Mis juhtub, kui liigud seina sisse? (Lisa kontroll `if grid[nx][ny] == "#": return`).
+
+***
+
+#### **Samm 4: Kastide lükkamine (15 min)**
+
+*   Näita loogikat:
+    ```python
+    if grid[nx][ny] == "B":
+        bx, by = nx + dx, ny + dy
+        if grid[bx][by] in [".", "F"]:
+            grid[bx][by] = "B"
+            grid[nx][ny] = "Y"
+            grid[x][y] = "." if (x, y) not in goals else "F"
+            player_pos = (nx, ny)
+    ```
+*   Harjutus: Mis juhtub, kui kast on seina ees?
+
+***
+
+#### **Samm 5: Võidutingimus (10 min)**
+
+*   Funktsioon:
+    ```python
+    def is_win():
+        return all(grid[x][y] == "B" for (x, y) in goals)
+    ```
+*   Kui `is_win()` on `True`, prindi: **"Tubli! Kõik kastid on kohal!"**
+
+***
+
+### **4. Lõpetus ja laiendused (10 min)**
+
+*   Lisa:
+    *   Värvid (`colorama`).
+    *   Mitme leveli tugi.
+    *   Undo funktsioon.
+*   Kodune töö: Tee oma level ja jaga klassiga.
+
+***
+
+## **Harjutused tunni jooksul**
+
+*   Muuda mänguvälja ja testi.
+*   Lisa kontroll, et mängija ei lähe seina sisse.
+*   Tee funktsioon, mis loeb kastide arvu.
+
+***
+
+## **Lisategevused (edukatele)**
+
+*   Lisa **levelite fail** ja loe see sisse.
+*   Tee **punktisüsteem** (liikumiste arv).
+*   Lisa **menüü**: “Uus mäng”, “Välju”.
+
+***
+
+Kas soovid, et ma **koostan valmis töövihiku** (PDF või Word), kus on:
+
+*   **koodi osad**,
+*   **selgitused**,
+*   **harjutused ja küsimused**,
+*   **laienduste ideed**?  
+    Või pigem **PowerPoint slaidid**, et saaksid tunnis näidata?
 
 
 # Vahe enne lõppu
