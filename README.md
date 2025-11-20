@@ -10,7 +10,7 @@
 7. [4-stringi-meetod](#4-stringi-meetod)
 8. [5-tsükli-näide](#5-tsükli-näide)
 9. [6. Sokoban Mängu ehitamine](#6-sokoban-mangu-ehitamine)
-10. 
+10.[7. ICS-faili lugemine ja töötlemine Pythonis](#7-ICS---faili-lugemine-ja-tootlemine-pythonis)
 11. 
 12. 
 
@@ -676,6 +676,60 @@ Kas soovid, et ma **koostan valmis töövihiku** (PDF või Word), kus on:
 *   **harjutused ja küsimused**,
 *   **laienduste ideed**?  
     Või pigem **PowerPoint slaidid**, et saaksid tunnis näidata?
+
+
+
+# 7. ICS-faili lugemine ja töötlemine Pythonis
+
+ICS (iCalendar) failid on tekstipõhised ja sisaldavad kalendri sündmuste infot. Pythonis saab neid töödelda mitme teegi abil, näiteks **`icalendar`** või **`ics`**.
+
+---
+
+## ✅ 1. Lugemine `icalendar` teegiga
+
+```python
+from icalendar import Calendar
+
+# Loe ICS-fail
+with open("sündmus.ics", "rb") as f:
+    cal = Calendar.from_ical(f.read())
+
+# Itereeri sündmuste üle
+for component in cal.walk():
+    if component.name == "VEVENT":
+        summary = component.get("SUMMARY")
+        start = component.get("DTSTART").dt
+        end = component.get("DTEND").dt
+        location = component.get("LOCATION")
+        print(f"Sündmus: {summary}")
+        print(f"Algus: {start}, Lõpp: {end}")
+        print(f"Asukoht: {location}")
+```
+
+Selgitus:
+
+Calendar.from_ical() loeb ICS-faili sisu.
+component.name == "VEVENT" filtreerib sündmused.
+.dt teisendab kuupäeva Python datetime objektiks.
+
+
+**2. Lugemine ics teegiga (lihtsam)**
+
+```python
+from ics import Calendar
+
+with open("sündmus.ics", "r", encoding="utf-8") as f:
+    c = Calendar(f.read())
+
+for event in c.events:
+    print(f"Sündmus: {event.name}")
+    print(f"Algus: {event.begin}, Lõpp: {event.end}")
+    print(f"Asukoht: {event.location}")
+```
+**Selgitus:**
+
+ics teek on lihtsam ja otsekohesem.
+event.begin ja event.end on Arrow objektid (mugav kuupäevade käsitlemiseks).
 
 
 # Vahe enne lõppu

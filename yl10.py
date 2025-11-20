@@ -22,12 +22,29 @@ kui kasutaja on vanem kui 18, siis ütleb, et kasutaja võib autot juhtida. (sõ
 
 def soiduAlgus():
     # küsib kasutajalt nime, tervitab teda nimepidi, küsib kasutajalt elukoha, 
-    nimi = input("Mis sinu nimi on? ")
-    txt = input("Tere,  {nimi} ! Kust sa pärit oled?")
+    nimi = input("Tere! Mis sinu nimi on? ")
+    print("Tere,", nimi +"! Kust sa pärit oled?")
+    txt = input()
+    if txt in ["Saaremaalt", "Saarest","Kuressaarest","Orissaarest","Sõrvest"]:
+        print("kui elukoht on Saaremaa, siis väljastab mingi kommentaari ")
+    else: 
+        print("aaaaa")
+    
+    
+    txt = int(input("aga kui vana sa oled? "))
+    if txt < 18:
+        print("ahsoo, sa oled liiga noor, et autot juhtida")
+    elif txt == 18: 
+        print("õnnitleb täisealiseks saamise puhul")
+    else: 
+        print("kasutaja võib autot juhtida")
 
-    print("Head teed!")
+    print("Head teed,", nimi+ "!")
 
 soiduAlgus()
+
+
+
 
 #-----------------------------------------------------
 # --- LOPP ---
