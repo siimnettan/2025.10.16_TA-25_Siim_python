@@ -32,7 +32,7 @@ def liigAasta(aasta):
     if aasta > 0 and type(aasta) == int:
         
         # jagub neljasajaga või jagub neljaga ja ei jagu sajaga.
-        if aasta % 400 == 0 or (aasta % 4 == 0 and  aasta % 100 == 0):
+        if aasta % 400 == 0 or (aasta % 4 == 0 and  aasta % 100 != 0):
             print(" liigaasta (", aasta  ,  ")")
         else:
             print("ei ole  (", aasta  ,  ")")

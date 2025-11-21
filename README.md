@@ -687,6 +687,8 @@ ICS (iCalendar) failid on tekstipõhised ja sisaldavad kalendri sündmuste infot
 
 ## ✅ 1. Lugemine `icalendar` teegiga
 
+See variant ei tööta
+
 ```python
 from icalendar import Calendar
 
@@ -730,6 +732,135 @@ for event in c.events:
 
 ics teek on lihtsam ja otsekohesem.
 event.begin ja event.end on Arrow objektid (mugav kuupäevade käsitlemiseks).
+
+
+## 7.2.1 TÖÖTAV ilma teegita
+
+```Python
+events = []
+event = {}
+
+with open("2025-11-17-15-15-04.ics", "r", encoding="utf-8") as f:
+    for line in f:
+        line = line.strip()
+        if line == "BEGIN:VEVENT":
+            event = {}
+        elif line.startswith("SUMMARY:"):
+            event["summary"] = line.replace("SUMMARY:", "")
+        elif line.startswith("DTSTART:"):
+            event["start"] = line.replace("DTSTART:", "")
+        elif line.startswith("DTEND:"):
+            event["end"] = line.replace("DTEND:", "")
+        elif line.startswith("LOCATION:"):
+            event["location"] = line.replace("LOCATION:", "")
+        elif line == "END:VEVENT":
+            events.append(event)
+
+# Näita tulemusi
+for e in events:
+    print(f"Sündmus: {e.get('summary')}")
+    print(f"Algus: {e.get('start')}, Lõpp: {e.get('end')}")
+    print(f"Asukoht: {e.get('location')}")
+    print("-" * 30)
+
+```
+
+
+## 7.2.2 puhasta
+```Python
+# Puhastatud sisu salvestamiseks
+isPuhastatudFail = []
+
+
+# Faili puhastamine
+allowed_keys = {"BEGIN:VEVENT", "END:VEVENT", "UID", "DTSTAMP", "DTSTART", "DTEND", "SUMMARY", "DESCRIPTION", "LOCATION"}
+cleaned_lines = []
+
+with open("2025-11-17-15-15-04.ics", "r", encoding="utf-8") as f:
+    for line in f:
+        line = line.strip()
+        if not line:
+            continue  # Jäta tühjad read vahele
+        # Kontrolli, kas rida algab mõne lubatud võtmega
+        for key in allowed_keys:
+            if line.startswith(key):
+                isPuhastatudFail.append(line)
+                break
+
+# # Salvesta puhastatud fail
+# with open("puhastatud.ics", "w", encoding="utf-8") as f:
+#     for l in cleaned_lines:
+#         f.write(l + "\n")
+
+# print("Fail puhastatud ja salvestatud nimega puhastatud.ics")
+
+
+# Kontrollime tulemust
+print("Puhastatud objekt:")
+for l in isPuhastatudFail:
+    print(l)
+
+
+```
+
+## 7.2.3 väljade järjekord
+
+
+```Python
+
+# Väljade järjekord
+order = ["BEGIN:VEVENT", "UID", "DTSTAMP", "DTSTART", "DTEND", "SUMMARY", "DESCRIPTION", "LOCATION", "END:VEVENT"]
+
+isRidaFail = []
+current_event = []
+
+for line in isPuhastatudFail:
+    if line == "BEGIN:VEVENT":
+        current_event = [line]  # Alusta uut sündmust
+    elif line == "END:VEVENT":
+        current_event.append(line)
+        # Liida kõik väljad ühte stringi, komadega eraldatult
+        isRidaFail.append(", ".join(current_event))
+        current_event = []
+    else:
+        current_event.append(line)
+
+# Kontrollime tulemust
+print("isRidaFail:")
+for rida in isRidaFail:
+    print(rida)
+
+```
+
+
+## 7.2.4 filtreerimine
+
+mingi filtreerimine
+
+```Python
+
+### filtreerimine 
+filtered_lines = []
+
+for line in isPuhastatudFail:
+# with open("2025-11-17-15-15-04.ics", "r", encoding="utf-8") as f:
+    # for line in f:
+        line = line.strip()
+        if line.startswith("DTSTAMP:202511"):
+            # Eralda võtme ja väärtuse
+            # key, value = line.split(":", 1)
+            # year = value[0:4]
+            # month = value[4:6]
+
+            # # Kontrolli tingimust
+            # if year == "2025" and month == "11":
+                filtered_lines.append(line)
+
+# Näita tulemusi
+for l in filtered_lines:
+    print(l)
+
+```
 
 
 # Vahe enne lõppu

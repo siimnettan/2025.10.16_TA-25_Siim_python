@@ -8,6 +8,7 @@ grid = [
     list("#YB.B.#"),
     list("###F..#"),
     list("#######")
+    
 ]
 
 player_pos = (3, 1)  # Y algpositsioon

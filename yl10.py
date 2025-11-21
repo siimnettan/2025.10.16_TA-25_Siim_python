@@ -24,7 +24,9 @@ def soiduAlgus():
     # küsib kasutajalt nime, tervitab teda nimepidi, küsib kasutajalt elukoha, 
     nimi = input("Tere! Mis sinu nimi on? ")
     print("Tere,", nimi +"! Kust sa pärit oled?")
-    txt = input()
+    txt = input().lower().strip() #chain
+    # txt.lower()
+    
     if txt in ["Saaremaalt", "Saarest","Kuressaarest","Orissaarest","Sõrvest"]:
         print("kui elukoht on Saaremaa, siis väljastab mingi kommentaari ")
     else: 
