@@ -1,0 +1,192 @@
+yl1
+Kirjuta programm, mis teisendab kasutaja poolt kroonides sisestatud summa eurodesse ja väljastab ümardatud tulemuse. (round)
+
+yl2
+Kirjuta programm, mis küsib kasutajalt raadiuse ja arvutab ringi pindala ja ümbermõõdu. (math.pi)
+ 
+yl3
+Kirjuta programm, mis küsib kasutajalt täisarvu n vahemikus 1-9. Arvuta n + nn + nnn väärtus ja väljasta see. (Näiteks kui kasutaja sisestab 2, siis on vaja väljastada tulemus 2 + 	22 + 222 = 246). Ära kasuta korrutamistehet. Ülesanne on lahendatav ainult liitmise operaatorit kasuades.
+
+yl4
+Kirjuta programm, mis leiab kahest kasutaja poolt sisestatud arvust miinimumi (ära kasuta min funktsiooni). (muutuja - variable, tingimus - condition, if-lause - if statement)
+
+yl5
+Koosta tõeväärtustabel kahele avaldisele
+A AND (B OR C)
+(A ~ B) OR NOT(C AND A)
+
+https://docs.google.com/spreadsheets/d/1sUFsE-bOm3isqKUGlIgjZWtdfqv7jDXp9lkch2pNCWc/edit?usp=sharing
+
+https://beta.wikiversity.org/wiki/V%C3%B5rdlustehted_ja_loogikatehted
+
+
+yl6
+Kirjuta programm, mis leiab kolmest kasutaja poolt sisestatud arvust maksimumi (ära kasuta max funktsiooni). (loogikatehted - logic operators)
+
+
+yl7
+Kirjuta programm, mis ütleb, kas kasutaja poolt etteantud täisarv on paarisarv või mitte. (paarisarvu mõiste - odd/even)
+
+yl8
+Kirjutada programm, mis kontrollib, kas antud positiivne täisarv on liig- või lihtaasta number.
+Aasta on liigaasta kui ta jagub neljasajaga või jagub neljaga ja ei jagu sajaga.
+
+yl9
+Kolmnurki liigitatakse külgede pikkuse järgi erikülgseteks, võrdhaarseteks ja võrdkülgseteks. Kirjutada programm, mis küsib kasutajalt kolme külje pikkused ning väljastab vastusena kolmnurga liigi. Lisaks tuleb kontrollida, kas etteantud küljepikkustega kolmnurk saab üldse eksisteerida. Külje pikkused ei pea olema täisarvud. (ujukomaarv - float)
+
+
+yl10
+Kirjuta programm, mis küsib kasutajalt nime, tervitab teda nimepidi, küsib kasutajalt elukoha, kui elukoht on Saaremaa, siis väljastab mingi kommentaari, küsib kasutajalt vanuse, kui vanus on väiksem kui 18, siis ütleb, et kasutaja on liiga noor, et autot juhtida, kui vanus on 18, siis õnnitleb täisealiseks saamise puhul, kui kasutaja on vanem kui 18, siis ütleb, et kasutaja võib autot juhtida. (sõne - string)
+
+yl12
+Anna muutuja väärtuseks list kolmest oma lemmik puuviljast ja väljasta see
+Väljasta listi esimene väärtus
+Lisa listi lõppu uus puuvili
+Väljasta listi viimane väärtus
+Muuda ühe elemendi väärtust ja väljasta kogu list
+Kontrolli kas väärtus (näiteks õun) eksisteerib listis
+Väljasta listi pikkus
+Eemalda listist element ja väljasta kogu list
+Muuda listi järjekord vastupidiseks
+Sorteeri list ja väljasta
+(jada, list, listi element, listi meetodid)
+https://www.w3schools.com/python/python_lists.asp
+yl13
+Küsi kasutajalt lemmikloom. Väljasta selle muutuja esimene täht.
+Koosta list, mis koosneb kolmest loomast.
+Lisa selle listi lõppu kasutaja sisestatud lemmikloom.
+Väljasta see lemmikloomade list.
+Väljasta listi viimase elemendi viimane täht.
+(sõne kui list, mitmemõõtmeline ilist - multi dimensional)
+yl14
+Kirjuta programm, mis küsib kasutajalt failinime kujul “failinimi.ext” (ext - extension - faili laiend) ja prindib välja laiendi (“ext”). (str.split)
+
+yl11
+Kirjuta programm, mis küsib kasutajalt sisendina stringi.
+Eemalda selle sisendi algusest ja lõpust tühikud.
+String peab vastama tingimustele, et selles on vähemalt seitse sümbolit ja et sümbolite arv on paarituarvuline.
+Väljasta selle stringi kolm keskmist sümbolit.
+(stringi meetodid, list)Läbitud teemad ja mõisted vaja teada:
+Algoritm. Mis see on? Kirjelda oma sõnadega. Loe siit ja saa aru: https://courses.cs.ut.ee/MTAT.03.100/2012_fall/uploads/opik/04_algoritmid.html
+Programmi töö võib jagada kolmeks: lähteandmete lugemine, arvutuste tegemine andmetega, tulemuse väljastamine. (sisendandmed, arvutused, tagastusväärtus)
+Muutuja. Mis on muutuja ja kuidas seda kasutada Pythonis
+Muutuja (variable) on programmeerija abivahend igasuguste väärtuste meeles pidamiseks ning nendega arvutamiseks programmi töö ajal. Muutujaga on üldjuhul seotud mitu iseloomustavat näitajat: nimi, andmetüüp ja väärtus. Muutuja väärtus võib programmi töötamise käigus muutuda.
+Muutujale algväärtuse omistamine. Muutuja väärtuse muutmine programmi töö käigus.
+Nimetamine. Kuidas nimetada muutjaid, funktsioone, faile, katalooge, klasse.
+Nimede tähendus, kirjeldab sisu, inglise keeles, väiketähtedega, ilma täpitähtede ja erisümboliteta, tühikuid ei ole, võib kasutada ka alakriipsu ja numbreid.
+Andmetüübid. Millised on põhilised andmetüübid, millega oleme seni kokku puutunud ja kuidas neid kasutada Pythonis
+Arvulised andmetüübid int ja float - mis need on ja milleks kasutatakse?
+Tekstilised andmetüübid string - mis on ja milleks kasutatakse?
+Tõeväärtus boolean - mis on ja milleks kasutatakse?
+str ja int funktsioon Pythonis. Mida teeb?
+Sisend ja väljund (input ja output) - milliste käskude ehk funktsioonide abil on võimalik Pythonis lugeda sisendit ja tulemust väljastada - input ja print. Kuidas neid kasutada?
++ operaator ja string.
+Tingimuslause. Mis see on ja kuidas kasutatakse?
+		süntaks Pythonis
+		if, elif, else ja nende erinevad kombinatsioonid
+		https://www.w3schools.com/python/python_conditions.asp
+Loogikaoperaatorid. Millised operaatorid on olemas ja kuidas kasutatakse?
+and, or, !
+https://www.w3schools.com/python/python_operators.asp
+Mis on list süntaks Pythonis
+https://www.w3schools.com/python/python_lists.asp
+Listi elemend väärtuse väljastamine, väärtuse lisamine, väärtuse muutmine.
+Listi meetodid
+yl17
+Väljasta korduslause abil numbrid 1..5 (kodruslause - loop, while)
+yl18
+Väljasta korduslause abil numbrid 5..1 (for in, range)
+
+yl19
+Leia muutuja abil etteantud tekstis olevate täishäälikute (a, e, i, o, u, õ, ä, ö, ü) arv. 
+
+yl20
+Väljasta korduslause abil 8 korrutis arvudega 0..12 ja vorminda väljund nii:
+8 x 0 = 0
+	8 x 1 = 8
+	8 x 2 = 16
+	…
+	8 x 12 = 96
+Täienda programmi nii, et kasutajalt küsitakse arv x, mille kohta korrutustabel väljastatakse
+
+Läbitud teemad ja mõisted vaja teada:
+Mis on korduslause süntaks Pythonis
+https://www.w3schools.com/python/python_while_loops.asp
+ja
+https://www.w3schools.com/python/python_for_loops.asp
+range() funktsioon
+Kuidas koostada algoritmi ja lahendada probleemi kuidas teha keerulist probleemi väiksemateks osadeks. Iga probleemi komponendid on sisend, arvutused või mingid tegevused, väljund.
+https://courses.cs.ut.ee/2016/eprogalkool/fall/Main/Algoritm
+Mis on funktsioon (ja süntaks Pythonis)
+https://www.w3schools.com/python/python_functions.asp
+Eeldefineeritud funktsioonid, funktsiooni defineerimine, sisendparameetrid, tagastusväärtus
+
+yl21
+Arvu arvamise mäng. 
+Arvuti mõtleb välja arvu nullist sajani. Lase kasutajal pakkuda, mis arvu arvuti välja mõtles. Vale pakkumise korral annab arvuti vihje, kas pakkumine on õigest arvust suurem või väiksem. Pakkuda saab seni, kuni kasutaja on õige arvu pakkunud. (juhuarv - random)
+
+yl22
+Kivi-paber-käärid mäng. 
+Arvuti mõtleb välja ühe variandi - kivi, paber või käärid. Arvuti küsib kasutaja valikut. Programm ütleb, kes võitis.
+Täienda programmi nii, et mängitakse seni, kuni kasutaja ei taha enam mängida.
+
+
+yl24
+
+https://www.reddit.com/r/dailyprogrammer/comments/a72sdj/20181217_challenge_370_easy_upc_check_digits/
+
+UPC vöötkoodi kontrollsumma arvutamise ülesanne. Alusta algoritmi koostamisest. Kommentaarides on ka lahendused, aga proovi ise lahendada. Defineeri kontrollsumma arvutamise funktsioon. (https://www.w3schools.com/python/python_functions.asp)
+
+yl25
+
+Koosta dictionary vähemalt viie endale iseloomuliku tunnusega (näiteks: eesnimi, perenimi, sünniaasta, elukoht, lemmik magustoit).
+Väljasta elukoht kahel erineval viisil (kasutades get() meetodit ja mitte kasutades seda).
+Muuda magustoidu väärtust.
+Tee kordus üle dictionary ja väljasta kõik võtmed.
+Tee kordus üle dictionary ja väljasta kõik väärtused (pööra tähelepanu sellele, et saab mitmel viisil, proovi erinevaid võimalusi).
+Kontrolli, kas isikukood on dictionary's olemas.
+Leia dictionary suurus (elementide arv).
+Lisa element enda pikkuse jaoks.
+Eemalda element sünniaasta (pane tähele, et saab mitut moodi).
+Pane tähele, et del võtmesõnaga on võimalik kogu dictionary kustutada.
+Saa aru ja katseta del võtmesõna ja clear meetodi erinevusest.
+Tutvu kõigi dictionary meetoditega.
+Läbi ülesanne juhendi lõpus.
+https://www.w3schools.com/python/python_dictionaries.asp
+
+
+yl26
+
+https://www.reddit.com/r/dailyprogrammer/comments/8xzwl6/20180711_challenge_365_intermediate_sales/
+
+Lisatasu arvutamise ülesanne. Alusta algoritmi koostamisest. Kommentaarides on kah lahendused, aga proovi ise lahendada. Defineeri lisatasu arvutamise funktsioon. Sisendina defineeri dictionary.
+
+
+yl27
+
+https://medium.com/@carrascalx/i-wrote-a-python-program-calculate-the-most-commonly-used-words-in-subreddits-heres-what-i-found-584ff946a8dc
+
+Loe läbi artikkel.
+Kas suudad mõista ja selgitada, mis on API?
+Kas suudad mõista ja selgitada, mis on pip?	
+Kui saad aru, mis on PRAW, siis installi see ja testi, kas töötab. (vihjed: https://praw.readthedocs.io/en/latest/getting_started/quick_start.html, https://www.reddit.com/prefs/apps/, https://www.reddit.com/r/redditdev/comments/5mzts3/what_do_you_put_in_for_redirect_uri_i_keep/)
+Leia analoogselt artiklist kirjeldatule enim kasutatud sõnad r/Eesti sub-redditis.
+
+
+yl28
+
+https://medium.com/@nishantsahoo/which-movie-should-i-watch-5c83a3c0f5b1
+
+Loe läbi artikkel.
+Kas suudad mõista ja selgitada, mis on Web Scraping?
+Millised on selle tegevuse eetilisuse ja viisakuse reeglid?
+Tee ise artiklis kirjeldatud projekt läbi ja kirjuta programm.
+Kohanda programmi Kuressaare Ametikooli tunniplaanist info kätte saamiseks.
+
+
+yl23
+Kaardimäng Blackjack
+
+https://et.wikipedia.org/wiki/Blackjack
+
+

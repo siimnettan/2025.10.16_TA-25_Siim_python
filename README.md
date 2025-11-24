@@ -11,8 +11,8 @@
 8. [5-tsükli-näide](#5-tsükli-näide)
 9. [6. Sokoban Mängu ehitamine](#6-sokoban-mangu-ehitamine)
 10.[7. ICS-faili lugemine ja töötlemine Pythonis](#7-ICS---faili-lugemine-ja-tootlemine-pythonis)
-11. 
-12. 
+11.[9. Bitwise operaatorid kasutamine bititasemel arvutuste tegemiseks
+](#9-bitwise-operaatorid-kasutamine-bititasemel-arvutuste-tegemiseks) 
 
 # 1. yl nr 7 - modulo tehted kuupäevadega
 
@@ -119,7 +119,7 @@ DateOfIssue,ProductionTechnology,EnergySource
 ```
 
 
-# 2.2 Imperatiivne lahendus - Python
+## 2.2 Imperatiivne lahendus - Python
 
 ```Python
 import xml.etree.ElementTree as ET
@@ -192,7 +192,7 @@ with open("energy.csv", "w", newline="") as f:
 | Tulemus        | Sama CSV                    | Sama CSV                                |
 
 
-# 2.3 Imperatiivne vs Deklaratiivne — R näitel
+## 2.3 Imperatiivne vs Deklaratiivne — R näitel
 
 
 
@@ -296,7 +296,7 @@ DateOfIssue,ProductionTechnology,EnergySource
 
 kolmas variant, kus deklaratiivne R-kood teeb sama töö üheainsa funktsioonikutsena (purrr ja map_df abil)
 
-# 2.4 Imperatiivne vs Deklaratiivne — SQL näitel
+## 2.4 Imperatiivne vs Deklaratiivne — SQL näitel
 
 Võtame sama andmenäite, kuid seekord kujutame ette, et andmed on salvestatud andmebaasi tabelisse.  
 
@@ -508,6 +508,48 @@ for n in numbers:
     squared.append(n * n)
 
 print(squared)
+```
+
+## 5.2 while tsükkel ja Walrus operaator
+vt ka https://www.w3schools.com/python/python_operators_assign.asp
+
+Walrus operaator on omistamisavaldis, et sa saaksid omistada väärtuse ja
+seda kasutada samaaegselt ühes avaldises
+
+```Python
+
+print(x := 3) # see on sama mis
+# x = 3
+# print(x)
+
+
+## või AI näide 1:
+
+while (n := len(my_list)) > 0:
+    print(f"Listis on {n} elementi") # kasutusel str meetod
+    my_list.pop()
+# # mis on sama nagu:
+# n = len(my_list)
+# while n > 0:
+#     print(f"Listis on {n} elementi")
+#     my_list.pop() # NB! txt.pop() on list meetod ehk remove
+#     # pop()	Removes the element at the specified position
+#     # remove()	Removes the first item with the specified value
+
+
+
+## või AI näide 2:
+## ilma Walrus operaatorita - kas see peaks töötama?
+# while True:
+#     user_input = input("Sisesta midagi (või Enter lõpetamiseks): ")
+#     if user_input = "":
+#         break
+#     print(f"Sisestatud: {user_input}")
+
+while (user_input := input ("sisesta")) != "":
+    print(f"Sisestatud: {user_input}")
+
+
 ```
 
 
@@ -863,6 +905,130 @@ for l in filtered_lines:
 ```
 
 
+# 8. COPY eripära Python
+
+
+
+---
+
+
+See näitab, et lihtne omistamine loob viite, mitte koopiat, ja .copy() teeb pindmise koopia.
+
+```python
+
+### COPY eripära Pyhton
+list1 = [1, 3, 4, 5, 6]
+list2 = list1
+
+list2[2] = 10
+print(list1)
+print(list2)
+
+list3 = list2.copy()
+list3[3] = 1000
+
+print(list1)
+print(list2)
+print(list3)
+
+
+```
+
+
+
+# 9. Bitwise operaatorid kasutamine bititasemel arvutuste tegemiseks
+
+Bitwise operaatorid töötavad otse binaarsete bittidega (0 ja 1). Need on kasulikud madala taseme operatsioonides, optimeerimisel ja olukordades, kus on vaja kiiresti kontrollida või muuta arvude bitte.
+
+---
+
+## 1. Kontrollimine, kas arv on paaris või mitte
+
+```python
+x = 10
+if x & 1 == 0:
+    print("Paaris")
+else:
+    print("Mittepaaris")
+```
+
+**Selgitus:**  
+`x & 1` kontrollib viimast bitti. Kui see on 0 → arv on paaris, kui 1 → arv on paaritu.
+
+---
+
+## 2. Lippude (flags) haldamine
+
+```python
+READ = 0b0001
+WRITE = 0b0010
+
+permissions = READ | WRITE  # lubame mõlemad
+print(permissions)  # 3
+
+# Kontrollime, kas WRITE on lubatud
+if permissions & WRITE:
+    print("Kirjutamine lubatud")
+```
+
+**Selgitus:**  
+Bitwise operaatorid on kiired ja mälusäästlikud, kui hoiad mitut olekut ühes arvus.
+
+---
+
+## 3. Kiire korrutamine/jagamine kahekordsete arvudega
+
+```python
+x = 5
+print(x << 1)  # 10 (nihutus vasakule = korrutamine 2-ga)
+print(x >> 1)  # 2  (nihutus paremale = jagamine 2-ga)
+```
+
+**Selgitus:**  
+`<<` nihutab bitte vasakule (korrutab 2-ga), `>>` nihutab paremale (jagab 2-ga).
+
+---
+
+## 4. Maskimine
+
+```python
+x = 29  # binaarselt: 11101
+mask = 0b1111
+print(x & mask)  # 13 (1101)
+```
+
+**Selgitus:**  
+Maskimine võimaldab võtta ainult teatud bitid (näiteks viimased 4 bitti).
+
+---
+
+## Kokkuvõte
+
+- `&` → AND (kontrollib bitte)
+- `|` → OR (ühendab bitte)
+- `^` → XOR (erinevad bitid)
+- `<<` → nihuta vasakule (korruta 2-ga)
+- `>>` → nihuta paremale (jaga 2-ga)
+
+Bitwise operaatorid on kasulikud:
+- Paaris/mitterpaaris kontroll
+- Lippude haldus
+- Kiire korrutamine/jagamine
+- Maskimine ja bititaseme manipulatsioon
+
+
+
+
+# 10. Copilot prompt
+Palun anna vastus ühesainsas koodiplokis. Kasuta Markdown-formaati ja loo hierarhia vastavalt minu juhistele. Lisa Python-koodi näited Markdowni sees (kasuta ```python``` blokke). Ära lisa väljaspool koodiplokki mitte ühtegi teksti ega kommentaari. 
+
+Näide, kui sul on konkreetne struktuur:
+Palun anna vastus ühesainsas koodiplokis. Kasuta Markdown-formaati ja loo hierarhia:
+h1 - [Pealkiri]
+h2 - [Alapealkiri 1]
+h2 - [Alapealkiri 2]
+...
+Lisa iga alapealkirja alla Python-koodi näide (kasuta ```python``` blokke). Ära lisa väljaspool koodiplokki mitte ühtegi teksti ega kommentaari.
 # Vahe enne lõppu
 
 
