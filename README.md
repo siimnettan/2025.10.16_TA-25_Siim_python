@@ -1020,7 +1020,7 @@ Bitwise operaatorid on kasulikud:
 
 
 # 10. Copilot prompt
-Palun anna vastus ühesainsas koodiplokis. Kasuta Markdown-formaati ja loo hierarhia vastavalt minu juhistele. Lisa Python-koodi näited Markdowni sees (kasuta ```python``` blokke). Ära lisa väljaspool koodiplokki mitte ühtegi teksti ega kommentaari. 
+Palun anna vastus ühesainsas koodiplokis. Kasuta Markdown-formaati. Lisa Python-koodi näited Markdowni sees (kasuta ```python``` blokke). Ära lisa väljaspool koodiplokki mitte ühtegi teksti ega kommentaari. 
 
 Näide, kui sul on konkreetne struktuur:
 Palun anna vastus ühesainsas koodiplokis. Kasuta Markdown-formaati ja loo hierarhia:
@@ -1029,6 +1029,27 @@ h2 - [Alapealkiri 1]
 h2 - [Alapealkiri 2]
 ...
 Lisa iga alapealkirja alla Python-koodi näide (kasuta ```python``` blokke). Ära lisa väljaspool koodiplokki mitte ühtegi teksti ega kommentaari.
+
+
+# 11. Regex - cheatsheet
+
+
+Regex Basics
+Symbol	Meaning
+.	any character except newline
+*	Match 0 or more characters
++	Match 1 or more characters
+?	Match 0 or 1 characters
+[abc]	Any of a,b or c
+[^abc]	not a,b or c
+[a-z]	Any of a to z
+^$	Start and end of string
+\w\d\s	word, digit, whitespace
+\W\D\S	not word, digit, whitespace
+a{5}a{2,}	exactly five, two or more
+a{1,3}	between one & three
+
+
 # Vahe enne lõppu
 
 
